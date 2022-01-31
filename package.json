@@ -2,11 +2,11 @@
   "name": "typescript-clean-project",
   "version": "1.0.0",
   "description": "This is meant to a starter Typescript project",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "start": "tsc && node dist/index.js",
     "build": "tsc",
-    "dev": "ts-node-dev src/index.ts",
+    "dev": "nodemon --ext ts --loader ts-node/esm --experimental-specifier-resolution node src",
     "lint": "eslint . --ext .ts",
     "tsc": "tsc",
     "ts-node-dev": "ts-node-dev"
@@ -27,5 +27,10 @@
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.4"
   },
-  "dependencies": {}
+  "type": "module",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "node-fetch": "^3.1.0",
+    "ts-node": "^10.4.0"
+  }
 }
